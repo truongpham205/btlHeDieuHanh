@@ -45,6 +45,7 @@
             this.tlpInternet = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.internetStatusLabel = new System.Windows.Forms.Label();
+            this.pnDisplay = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tlpDisplay.SuspendLayout();
@@ -118,6 +119,7 @@
             this.tlpDisplay.ColumnCount = 1;
             this.tlpDisplay.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDisplay.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tlpDisplay.Controls.Add(this.pnDisplay, 0, 0);
             this.tlpDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDisplay.Location = new System.Drawing.Point(142, 3);
             this.tlpDisplay.Name = "tlpDisplay";
@@ -251,6 +253,14 @@
             this.internetStatusLabel.Text = "Not Connect";
             this.internetStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnDisplay
+            // 
+            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDisplay.Location = new System.Drawing.Point(3, 3);
+            this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Size = new System.Drawing.Size(781, 444);
+            this.pnDisplay.TabIndex = 1;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +307,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label internetStatusLabel;
         private System.Windows.Forms.ProgressBar progressBarBartery;
+        private System.Windows.Forms.Panel pnDisplay;
     }
 }
 

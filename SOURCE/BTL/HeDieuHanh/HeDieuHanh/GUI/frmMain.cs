@@ -1,4 +1,5 @@
 ﻿using HeDieuHanh.Class;
+using HeDieuHanh.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,17 +43,32 @@ namespace HeDieuHanh
 
         private void btnTaskManager_Click(object sender, EventArgs e)
         {
+            //pnDisplay.Controls.Clear();
+            //pnDisplay.Refresh();
 
+            ucTaskManager ucTaskManager = new ucTaskManager();
+            //pnDisplay.Controls.Add(ucTaskManager);
+            //ucTaskManager.Dock = DockStyle.Fill;
+            displayUcOnPanel(ucTaskManager);
         }
 
         private void btnMusic_Click(object sender, EventArgs e)
         {
-
+            ucMusic ucMusic = new ucMusic();
+            displayUcOnPanel(ucMusic);
         }
 
         private void trackBarVolume_Scroll(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
+        }
+
+        void displayUcOnPanel(UserControl userControl)
+        {
+            pnDisplay.Controls.Clear();
+            pnDisplay.Refresh();
+            pnDisplay.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
         }
     }
 }
