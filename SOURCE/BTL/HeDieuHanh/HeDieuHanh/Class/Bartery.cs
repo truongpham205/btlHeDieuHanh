@@ -47,5 +47,10 @@ namespace HeDieuHanh.Class
             }
             return barteryStatus;
         }
+
+        public string getPercentBartery()
+        {
+            return ((int)(powerStatus.BatteryLifePercent * 100)).ToString() + "%";
+        }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HeDieuHanh.Class
 {
@@ -16,6 +18,19 @@ namespace HeDieuHanh.Class
                 shared = new TaskManager();
             }
             return shared;
+        }
+
+        Process[] listProcess = Process.GetProcesses();
+
+        public Process[] getListProcess()
+        {
+            return listProcess;
+        }
+
+        public void endProcess(Process process)
+        {
+            process.Kill();
+            process.WaitForExit();
         }
     }
 }

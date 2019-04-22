@@ -15,6 +15,10 @@ namespace HeDieuHanh
 {
     public partial class frmMain : Form
     {
+        ucTaskManager ucTaskManager = new ucTaskManager();
+        ucMusic ucMusic = new ucMusic();
+        ucUtilities ucUtilities = new ucUtilities();
+
         public frmMain()
         {
             InitializeComponent();
@@ -23,30 +27,20 @@ namespace HeDieuHanh
         private void frmMain_Load(object sender, EventArgs e)
         {
             setupForm();
-            displayStatusBatery();
         }
 
         void setupForm()
         {
-            progressBarBartery.Maximum = 100;
-            progressBarBartery.Minimum = 0;
 
-            trackBarVolume.Maximum = 100;
-            trackBarVolume.Minimum = 0;
         }
 
-        void displayStatusBatery()
-        {  
-            progressBarBartery.Value = Bartery.getInstant().getBatteryLifePercent();
-            //progressBarBartery.ResetTe
-        }
 
         private void btnTaskManager_Click(object sender, EventArgs e)
         {
             //pnDisplay.Controls.Clear();
             //pnDisplay.Refresh();
 
-            ucTaskManager ucTaskManager = new ucTaskManager();
+            
             //pnDisplay.Controls.Add(ucTaskManager);
             //ucTaskManager.Dock = DockStyle.Fill;
             displayUcOnPanel(ucTaskManager);
@@ -54,8 +48,13 @@ namespace HeDieuHanh
 
         private void btnMusic_Click(object sender, EventArgs e)
         {
-            ucMusic ucMusic = new ucMusic();
+            
             displayUcOnPanel(ucMusic);
+        }
+
+        private void btnUtility_Click(object sender, EventArgs e)
+        {
+            displayUcOnPanel(ucUtilities);
         }
 
         private void trackBarVolume_Scroll(object sender, EventArgs e)
@@ -70,5 +69,6 @@ namespace HeDieuHanh
             pnDisplay.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
         }
+
     }
 }
