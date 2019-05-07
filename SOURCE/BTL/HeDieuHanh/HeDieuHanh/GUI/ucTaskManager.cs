@@ -62,12 +62,23 @@ namespace HeDieuHanh.GUI
 
         private void btnEndProcess_Click(object sender, EventArgs e)
         {
+            Process be_terminated = Process.GetProcessById(selectedprocess);
 
+            string messages = "Do you want to end " + be_terminated.ProcessName + ".exe?";
+            string caption = "Alert";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(messages, caption, buttons);
+            if (result == DialogResult.Yes)
+            {
+                TaskManager.getInstant().endProcess(be_terminated);
+            }
         }
 
         private void lvProcess_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-
+            selectedprocess = Int32.Parse(lvProcess.SelectedItems[0].SubItems[1].Text);
         }
 
         private void lvProcess_Click(object sender, EventArgs e)

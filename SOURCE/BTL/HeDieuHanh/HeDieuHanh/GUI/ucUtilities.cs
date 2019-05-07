@@ -48,6 +48,7 @@ namespace HeDieuHanh.GUI
         private void trackBarVolume_Scroll(object sender, EventArgs e)
         {
             Volume.getInstant().volumeUp();
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
